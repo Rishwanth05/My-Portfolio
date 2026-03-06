@@ -5,29 +5,48 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background: #e9edf3;
   color: #1c2b4a;
   overflow-x: hidden;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* ================= SECTION SWITCHING ================= */
-.section { display: none; }
-.active-section { display: block; }
+.section {
+  display: none;
+}
+
+.active-section {
+  display: block;
+}
 
 /* ================= HEADER ================= */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px 8%;
+  padding: 28px 6%;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 .logo {
-  font-size: 64px;
+  font-size: clamp(40px, 4.5vw, 64px);
   font-weight: 800;
   color: #3a4f7a;
+  line-height: 1;
 }
 
 .logo span {
@@ -35,15 +54,21 @@ header {
   color: #3a66ff;
 }
 
-/* ================= NAVBAR ================= */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
 nav a {
   text-decoration: none;
-  margin-left: 45px;
-  font-size: 30px;
+  margin-left: 0;
+  font-size: clamp(18px, 1.8vw, 26px);
   font-weight: 700;
   color: #1c2b4a;
-  transition: 0.3s;
-  padding: 6px 10px;
+  transition: 0.3s ease;
+  padding: 8px 14px;
   border-radius: 10px;
 }
 
@@ -53,7 +78,7 @@ nav a:hover {
 
 nav a.active {
   color: #3a66ff;
-  background: rgba(58, 102, 255, 0.10);
+  background: rgba(58, 102, 255, 0.1);
 }
 
 /* ================= HOME ================= */
@@ -65,13 +90,13 @@ nav a.active {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 120px 8%;
-  min-height: calc(100vh - 140px);
-  gap: 60px;
+  padding: 80px 6%;
+  min-height: calc(100vh - 120px);
+  gap: 50px;
 }
 
 .hero-left {
-  width: 620px;
+  flex: 1;
   max-width: 620px;
   display: flex;
   flex-direction: column;
@@ -80,7 +105,7 @@ nav a.active {
 }
 
 .hero-left h1 {
-  font-size: 72px;
+  font-size: clamp(42px, 5vw, 72px);
   font-weight: 800;
   line-height: 1.08;
   margin-bottom: 16px;
@@ -91,10 +116,11 @@ nav a.active {
   font-style: italic;
   color: #5f6f94;
   margin-bottom: 18px;
+  font-size: clamp(18px, 2vw, 24px);
 }
 
 .banner-text {
-  font-size: 20px;
+  font-size: clamp(17px, 1.6vw, 20px);
   font-weight: 500;
   line-height: 1.8;
   color: #475a85;
@@ -106,18 +132,19 @@ nav a.active {
   display: flex;
   gap: 16px;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 .social-icons a {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 64px;
-  height: 64px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  font-size: 26px;
+  font-size: 24px;
   color: #fff;
-  transition: 0.3s;
+  transition: 0.3s ease;
   box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
   border: 4px solid #ffffff;
 }
@@ -126,8 +153,13 @@ nav a.active {
   transform: translateY(-8px);
 }
 
-.linkedin { background: #0059b3; }
-.github { background: #111111; }
+.linkedin {
+  background: #0059b3;
+}
+
+.github {
+  background: #111111;
+}
 
 .hero-right {
   flex: 1;
@@ -137,19 +169,21 @@ nav a.active {
 }
 
 .profile-img {
-  width: 720px;
-  height: 720px;
+  width: min(32vw, 420px);
+  height: min(32vw, 420px);
+  min-width: 280px;
+  min-height: 280px;
   object-fit: cover;
   border-radius: 50%;
   border: 10px solid white;
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.20);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
 }
 
 /* ================= EDUCATION ================= */
 .edu-section {
-  padding: 80px 8%;
+  padding: 70px 6%;
   background: #eef7ff;
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - 120px);
 }
 
 .edu-hero {
@@ -157,29 +191,28 @@ nav a.active {
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 60px;
+  gap: 50px;
+  flex-wrap: wrap;
 }
 
 .edu-cap-img {
-  width: 520px;
-  max-width: 90%;
+  width: min(420px, 90%);
   height: auto;
-  display: block;
 }
 
 .edu-title {
-  font-size: 60px;
+  font-size: clamp(38px, 4vw, 60px);
   font-weight: 800;
 }
 
 .edu-subtitle {
-  font-size: 24px;
+  font-size: clamp(18px, 2vw, 24px);
   font-weight: 600;
 }
 
 .edu-heading {
   text-align: center;
-  font-size: 40px;
+  font-size: clamp(30px, 3vw, 40px);
   margin: 50px 0;
 }
 
@@ -191,8 +224,9 @@ nav a.active {
 }
 
 .edu-logo-circle {
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
+  min-width: 130px;
   background: white;
   border-radius: 50%;
   display: flex;
@@ -201,8 +235,8 @@ nav a.active {
 }
 
 .edu-logo {
-  width: 100px;
-  height: 100px;
+  width: 85px;
+  height: 85px;
   object-fit: contain;
 }
 
@@ -211,6 +245,7 @@ nav a.active {
   border-radius: 10px;
   width: 100%;
   overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
 }
 
 .edu-card-top {
@@ -219,15 +254,22 @@ nav a.active {
   display: flex;
   justify-content: space-between;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
-.edu-school { font-size: 22px; font-weight: 700; }
-.edu-degree { font-size: 16px; }
+.edu-school {
+  font-size: clamp(20px, 2vw, 22px);
+  font-weight: 700;
+}
+
+.edu-degree {
+  font-size: 16px;
+}
 
 .edu-card-body {
   padding: 20px;
   position: relative;
-  padding-bottom: 60px;
+  padding-bottom: 70px;
 }
 
 .edu-bullets {
@@ -238,7 +280,7 @@ nav a.active {
 
 .edu-bullets li {
   margin-bottom: 12px;
-  font-size: 18px;
+  font-size: clamp(16px, 1.5vw, 18px);
   line-height: 1.5;
   color: #0b1c4a;
 }
@@ -255,15 +297,15 @@ nav a.active {
   border-radius: 8px;
 }
 
-/* ================= EXPERIENCE (UPDATED) ================= */
+/* ================= EXPERIENCE ================= */
 #experience {
   background: #e9edf3;
-  padding: 60px 8%;
-  min-height: calc(100vh - 140px);
+  padding: 60px 6%;
+  min-height: calc(100vh - 120px);
 }
 
 .exp-main-title {
-  font-size: 72px;
+  font-size: clamp(40px, 5vw, 72px);
   font-weight: 900;
   color: #1c2b4a;
   margin-bottom: 10px;
@@ -281,17 +323,19 @@ nav a.active {
   border-radius: 12px;
   border: 1.5px solid rgba(28, 43, 74, 0.1);
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   margin-bottom: 40px;
 }
 
 .exp-card-header {
   background: #1c2b4a;
   color: #ffffff;
-  padding: 25px 40px;
+  padding: 25px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
 }
 
 .exp-header-left {
@@ -303,33 +347,34 @@ nav a.active {
 .exp-logo-circle {
   width: 50px;
   height: 50px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 20px;
+  flex-shrink: 0;
 }
 
 .exp-header-text h2 {
-  font-size: 28px;
+  font-size: clamp(22px, 2vw, 28px);
   letter-spacing: 1px;
 }
 
 .exp-role {
-  font-size: 18px;
+  font-size: clamp(16px, 1.6vw, 18px);
   opacity: 0.9;
   font-weight: 500;
 }
 
 .exp-date {
   font-weight: 700;
-  font-size: 18px;
+  font-size: clamp(15px, 1.4vw, 18px);
   letter-spacing: 1px;
 }
 
 .exp-body {
-  padding: 30px 40px;
+  padding: 30px 32px;
 }
 
 .exp-bullets {
@@ -337,14 +382,14 @@ nav a.active {
 }
 
 .exp-bullets li {
-  font-size: 17px;
+  font-size: clamp(15px, 1.4vw, 17px);
   line-height: 1.8;
   color: #1c2b4a;
   margin-bottom: 12px;
   font-weight: 500;
 }
 
-/* Skills Wrapper & Grid */
+/* ================= SKILLS ================= */
 .skills-wrapper {
   margin-top: 50px;
 }
@@ -377,7 +422,7 @@ nav a.active {
   font-weight: 600;
   transition: 0.3s ease;
   cursor: default;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .skills-grid span:hover {
@@ -388,12 +433,12 @@ nav a.active {
 /* ================= PROJECTS ================= */
 #projects {
   background: #e9edf3;
-  padding: 60px 8%;
-  min-height: calc(100vh - 140px);
+  padding: 60px 6%;
+  min-height: calc(100vh - 120px);
 }
 
 .projects-main-title {
-  font-size: 72px;
+  font-size: clamp(40px, 5vw, 72px);
   font-weight: 900;
   color: #1c2b4a;
   margin-bottom: 10px;
@@ -423,10 +468,11 @@ nav a.active {
   background: #ffffff;
   color: #1c2b4a;
   transition: 0.3s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-.proj-btn.active, .proj-btn:hover {
+.proj-btn.active,
+.proj-btn:hover {
   background: #3a66ff;
   color: #ffffff;
   transform: translateY(-3px);
@@ -434,7 +480,7 @@ nav a.active {
 
 .project-content-card {
   display: grid;
-  grid-template-columns: 3fr 1fr; 
+  grid-template-columns: 2fr 1fr;
   gap: 30px;
   align-items: stretch;
 }
@@ -443,14 +489,19 @@ nav a.active {
   background: #cfe1f5;
   border: 1.5px solid rgba(28, 43, 74, 0.1);
   border-radius: 12px;
-  padding: 40px;
+  padding: 36px;
 }
 
 .project-text-side h2 {
-  font-size: 42px;
+  font-size: clamp(28px, 3vw, 42px);
   font-weight: 800;
   margin-bottom: 20px;
   color: #1c2b4a;
+}
+
+.project-text-side p {
+  font-size: clamp(16px, 1.4vw, 18px);
+  line-height: 1.8;
 }
 
 .project-tags {
@@ -467,7 +518,7 @@ nav a.active {
   font-size: 14px;
   font-weight: 600;
   color: #3a66ff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .project-actions {
@@ -477,7 +528,8 @@ nav a.active {
   flex-wrap: wrap;
 }
 
-.view-project-btn, .video-demo-btn {
+.view-project-btn,
+.video-demo-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -485,11 +537,18 @@ nav a.active {
   text-decoration: none;
   border-radius: 8px;
   font-weight: 700;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
-.view-project-btn { background: #1c2b4a; color: #ffffff; }
-.view-project-btn:hover { background: #3a66ff; transform: scale(1.05); }
+.view-project-btn {
+  background: #1c2b4a;
+  color: #ffffff;
+}
+
+.view-project-btn:hover {
+  background: #3a66ff;
+  transform: scale(1.05);
+}
 
 .video-demo-btn {
   background: #ffffff;
@@ -525,12 +584,12 @@ nav a.active {
 /* ================= MY MINDSET ================= */
 #mindset {
   background: #e9edf3;
-  padding: 60px 8%;
-  min-height: calc(100vh - 140px);
+  padding: 60px 6%;
+  min-height: calc(100vh - 120px);
 }
 
 .mindset-main-title {
-  font-size: 72px;
+  font-size: clamp(40px, 5vw, 72px);
   font-weight: 900;
   color: #1c2b4a;
   margin-bottom: 10px;
@@ -545,7 +604,7 @@ nav a.active {
 
 .mindset-grid {
   display: grid;
-  grid-template-columns: 3fr 1fr; 
+  grid-template-columns: 2fr 1fr;
   gap: 30px;
   align-items: start;
 }
@@ -557,8 +616,13 @@ nav a.active {
   padding: 35px 40px;
 }
 
+.mindset-content-box p {
+  font-size: clamp(16px, 1.4vw, 18px);
+  line-height: 1.9;
+}
+
 .mindset-quote {
-  font-size: 20px;
+  font-size: clamp(18px, 1.8vw, 20px);
   font-weight: 800;
   font-style: italic;
   color: #1c2b4a;
@@ -583,7 +647,7 @@ nav a.active {
 
 /* ================= CONTACT ================= */
 .contact-hero {
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - 120px);
   background: #e9edf3;
   display: flex;
   flex-direction: column;
@@ -594,14 +658,14 @@ nav a.active {
 }
 
 .contact-title {
-  font-size: 80px;
+  font-size: clamp(44px, 6vw, 80px);
   font-weight: 800;
   margin-bottom: 30px;
   color: #1c2b4a;
 }
 
 .contact-text {
-  font-size: 24px;
+  font-size: clamp(18px, 2vw, 24px);
   max-width: 850px;
   line-height: 1.8;
   color: #6f7f9f;
@@ -616,65 +680,281 @@ nav a.active {
 }
 
 .icon {
-  width: 80px;
-  height: 80px;
+  width: 78px;
+  height: 78px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 28px;
   color: #fff;
   transition: 0.3s ease;
   text-decoration: none;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.icon:hover { transform: translateY(-8px); }
+.icon:hover {
+  transform: translateY(-8px);
+}
 
-.github2 { background: #111111; }
-.linkedin2 { background: #0a66c2; }
-.instagram { background: #e1306c; }
+.github2 {
+  background: #111111;
+}
+
+.linkedin2 {
+  background: #0a66c2;
+}
+
+.instagram {
+  background: #e1306c;
+}
 
 .contact-split {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 80px;
+  gap: 60px;
+  width: 100%;
 }
 
-.contact-left { max-width: 760px; text-align: left; }
+.contact-left {
+  max-width: 760px;
+  text-align: left;
+}
 
 .contact-img {
-  width: 520px;
-  max-width: 42vw;
+  width: min(420px, 40vw);
   height: auto;
-  display: block;
 }
 
-.contact-email, .contact-phone {
+.contact-email,
+.contact-phone {
   margin-bottom: 15px;
-  font-size: 22px;
+  font-size: clamp(18px, 1.8vw, 22px);
   font-weight: 600;
   color: #1c2b4a;
   display: flex;
   align-items: center;
   gap: 12px;
+  word-break: break-word;
 }
 
-.contact-email a, .contact-phone a {
+.contact-email a,
+.contact-phone a {
   text-decoration: none;
   color: #1c2b4a;
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 1100px) {
-  .hero { flex-direction: column; text-align: center; }
-  .hero-left { width: 90%; text-align: center; }
-  .profile-img { width: 300px; height: 300px; }
-  .mindset-grid, .project-content-card { grid-template-columns: 1fr; }
-  .contact-split { flex-direction: column; text-align: center; }
-  .contact-left { text-align: center; }
-  .contact-email, .contact-phone { justify-content: center; }
-  .projects-main-title, .exp-main-title { font-size: 50px; }
-  .exp-card-header { flex-direction: column; align-items: flex-start; gap: 15px; }
+/* ================= LARGE TABLET ================= */
+@media (max-width: 1200px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 70px 6%;
+  }
+
+  .hero-left {
+    max-width: 800px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .banner-text {
+    max-width: 100%;
+  }
+
+  .project-content-card,
+  .mindset-grid,
+  .contact-split,
+  .edu-row {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .contact-left {
+    text-align: center;
+  }
+
+  .contact-email,
+  .contact-phone {
+    justify-content: center;
+  }
+
+  .exp-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 900px) {
+  header {
+    padding: 24px 5%;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+
+  .hero,
+  .edu-section,
+  #experience,
+  #projects,
+  #mindset {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .profile-img {
+    width: 320px;
+    height: 320px;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .edu-logo-circle {
+    width: 110px;
+    height: 110px;
+    min-width: 110px;
+  }
+
+  .edu-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .project-text-side,
+  .mindset-content-box,
+  .exp-body {
+    padding: 24px;
+  }
+
+  .exp-card-header {
+    padding: 22px 24px;
+  }
+
+  .contact-img {
+    width: min(320px, 80vw);
+  }
+
+  .icon {
+    width: 70px;
+    height: 70px;
+    font-size: 26px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+  header {
+    padding: 20px 4%;
+    gap: 16px;
+  }
+
+  .logo {
+    font-size: 36px;
+  }
+
+  nav {
+    gap: 8px;
+  }
+
+  nav a {
+    font-size: 16px;
+    padding: 7px 10px;
+  }
+
+  .hero {
+    padding: 50px 4%;
+    gap: 30px;
+    min-height: auto;
+  }
+
+  .hero-left h1 {
+    line-height: 1.15;
+  }
+
+  .banner-text {
+    font-size: 16px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .social-icons a {
+    width: 54px;
+    height: 54px;
+    font-size: 22px;
+  }
+
+  .profile-img {
+    width: 260px;
+    height: 260px;
+  }
+
+  .edu-section,
+  #experience,
+  #projects,
+  #mindset,
+  .contact-hero {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .edu-card-top {
+    flex-direction: column;
+  }
+
+  .edu-card-body {
+    padding-bottom: 85px;
+  }
+
+  .edu-visit {
+    left: 20px;
+    right: auto;
+  }
+
+  .proj-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .project-actions {
+    flex-direction: column;
+  }
+
+  .view-project-btn,
+  .video-demo-btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .contact-text {
+    line-height: 1.7;
+  }
+
+  .contact-email,
+  .contact-phone {
+    font-size: 17px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .icon {
+    width: 64px;
+    height: 64px;
+    font-size: 24px;
+  }
 }
