@@ -389,47 +389,6 @@ nav a.active {
   font-weight: 500;
 }
 
-/* ================= SKILLS ================= */
-.skills-wrapper {
-  margin-top: 50px;
-}
-
-.skills-group-title {
-  font-size: 20px;
-  font-weight: 800;
-  color: white;
-  background: #1c2b4a;
-  display: inline-block;
-  padding: 8px 20px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  letter-spacing: 0.5px;
-}
-
-.skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 40px;
-}
-
-.skills-grid span {
-  background: #1c2b4a;
-  color: white;
-  padding: 10px 22px;
-  border-radius: 6px;
-  font-size: 15px;
-  font-weight: 600;
-  transition: 0.3s ease;
-  cursor: default;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.skills-grid span:hover {
-  background: #3a66ff;
-  transform: translateY(-3px);
-}
-
 /* ================= PROJECTS ================= */
 #projects {
   background: #e9edf3;
