@@ -153,10 +153,6 @@ nav a.active {
   transform: translateY(-8px);
 }
 
-.linkedin {
-  background: #0059b3;
-}
-
 .github {
   background: #111111;
 }
@@ -297,95 +293,78 @@ nav a.active {
   border-radius: 8px;
 }
 
-/* ================= EXPERIENCE ================= */
-#experience {
+/* ================= SKILLS ================= */
+#skills {
   background: #e9edf3;
   padding: 60px 6%;
   min-height: calc(100vh - 120px);
 }
 
-.exp-main-title {
+.skills-main-title {
   font-size: clamp(32px, 3.5vw, 48px);
   font-weight: 900;
   color: #1c2b4a;
   margin-bottom: 10px;
 }
 
-.exp-underline {
+.skills-underline {
   height: 2px;
   background: rgba(28, 43, 74, 0.2);
   margin-bottom: 50px;
   width: 100%;
 }
 
-.exp-card {
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.skill-card {
   background: #cfe1f5;
-  border-radius: 12px;
   border: 1.5px solid rgba(28, 43, 74, 0.1);
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  margin-bottom: 40px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.exp-card-header {
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card-header {
   background: #1c2b4a;
   color: #ffffff;
-  padding: 25px 32px;
+  padding: 16px 24px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 18px;
-  flex-wrap: wrap;
+  gap: 12px;
+  font-size: clamp(15px, 1.5vw, 17px);
+  font-weight: 700;
+  letter-spacing: 0.3px;
 }
 
-.exp-header-left {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.exp-logo-circle {
-  width: 50px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.skill-card-header i {
   font-size: 20px;
+  opacity: 0.9;
   flex-shrink: 0;
 }
 
-.exp-header-text h2 {
-  font-size: clamp(22px, 2vw, 28px);
-  letter-spacing: 1px;
-}
-
-.exp-role {
-  font-size: clamp(16px, 1.6vw, 18px);
-  opacity: 0.9;
-  font-weight: 500;
-}
-
-.exp-date {
-  font-weight: 700;
-  font-size: clamp(15px, 1.4vw, 18px);
-  letter-spacing: 1px;
-}
-
-.exp-body {
-  padding: 30px 32px;
-}
-
-.exp-bullets {
+.skill-bullets {
   list-style: none;
+  padding: 20px 24px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.exp-bullets li {
-  font-size: clamp(15px, 1.4vw, 17px);
-  line-height: 1.8;
+.skill-bullets li {
+  font-size: clamp(14px, 1.3vw, 15px);
+  line-height: 1.6;
   color: #1c2b4a;
-  margin-bottom: 12px;
   font-weight: 500;
 }
 
@@ -660,10 +639,6 @@ nav a.active {
   background: #111111;
 }
 
-.linkedin2 {
-  background: #0a66c2;
-}
-
 .instagram {
   background: #e1306c;
 }
@@ -744,11 +719,6 @@ nav a.active {
   .contact-phone {
     justify-content: center;
   }
-
-  .exp-card-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 }
 
 /* ================= TABLET ================= */
@@ -768,7 +738,7 @@ nav a.active {
 
   .hero,
   .edu-section,
-  #experience,
+  #skills,
   #projects,
   #mindset {
     padding-left: 5%;
@@ -794,13 +764,12 @@ nav a.active {
   }
 
   .project-text-side,
-  .mindset-content-box,
-  .exp-body {
+  .mindset-content-box {
     padding: 24px;
   }
 
-  .exp-card-header {
-    padding: 22px 24px;
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 
   .contact-img {
@@ -864,7 +833,7 @@ nav a.active {
   }
 
   .edu-section,
-  #experience,
+  #skills,
   #projects,
   #mindset,
   .contact-hero {
@@ -915,5 +884,14 @@ nav a.active {
     width: 64px;
     height: 64px;
     font-size: 24px;
+  }
+
+  .skill-card-header {
+    font-size: 15px;
+    padding: 14px 18px;
+  }
+
+  .skill-bullets {
+    padding: 16px 18px;
   }
 }
