@@ -119,8 +119,8 @@
             I'm a full-stack engineer who likes building things that
             actually work in the real world, not just in a demo.
 
-            Right now I'm building Project SAVE, a community
-            hazard-reporting platform handling everything from the
+            Right now I'm building and operating HetuSafe, a live community
+            civic hazard-reporting platform handling everything from the
             infrastructure to the UI, and yes, that includes the
             2am production bugs too.
 
@@ -846,7 +846,7 @@
 
           <img
             src="save.jpg"
-            alt="Project SAVE"
+            alt="HetuSafe"
           />
 
           <div class="project-media-overlay"></div>
@@ -865,19 +865,21 @@
           </p>
 
           <h3>
-            Project SAVE
+            HetuSafe
           </h3>
 
 
           <p class="project-description">
 
-            Project SAVE is a full-stack public safety web application
-            that allows users to report and view hazard incidents on
-            an interactive map.
+            HetuSafe (formerly Project SAVE) is a live, community-powered
+            civic hazard-reporting platform built and operated end-to-end,
+            from product design and backend services to cloud deployment.
 
-            The system supports user authentication, hazard reporting
-            with images and location pins, and filtering of incidents
-            to improve community awareness and safety.
+            It combines camera-first reporting, real-time geospatial updates,
+            community verification, trust/reputation scoring and location-aware
+            notifications. Public beta completed with 50 real testers, backed
+            by 81 automated tests, protected CI/CD and production monitoring.
+            Kubernetes orchestration is currently being implemented for future scale.
 
           </p>
 
@@ -887,11 +889,13 @@
             <span>React + Vite</span>
             <span>Node.js + Express</span>
             <span>PostgreSQL</span>
-            <span>MapLibre GL JS</span>
             <span>Redis</span>
+            <span>MapLibre GL JS</span>
             <span>Docker</span>
-            <span>JWT Auth</span>
+            <span>AWS</span>
             <span>GitHub Actions</span>
+            <span>Jest + Supertest</span>
+            <span>Kubernetes (In Progress)</span>
 
           </div>
 
@@ -1191,12 +1195,12 @@
               to recognizing and resolving critical pain-point
               challenges throughout my journey.
 
-              One such initiative was a project named "SAVE,"
-              developed to help protect people in India from unknown
-              and dangerous hazards.
+              One such initiative became HetuSafe (formerly Project SAVE),
+              developed to help communities in India identify, report, and
+              stay informed about unknown and dangerous civic hazards.
 
               This was not just another technical project;
-              it was a mission-driven initiative built with purpose.
+              it became a live, mission-driven platform built with purpose.
 
             </p>
 
@@ -1302,24 +1306,20 @@
       </div>
 
 
-      <div class="contact-layout">
-
+      <div class="contact-grid">
 
         <a
           href="mailto:arishwanthreddy@gmail.com"
-          class="contact-feature"
+          class="contact-card"
         >
 
+          <div class="contact-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+
           <div>
-
-            <span class="contact-type">
-              EMAIL
-            </span>
-
-            <strong>
-              arishwanthreddy@gmail.com
-            </strong>
-
+            <small>EMAIL</small>
+            <strong>arishwanthreddy@gmail.com</strong>
           </div>
 
           <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -1328,23 +1328,21 @@
 
 
         <a
-          href="tel:+19132064806"
-          class="contact-feature"
+          href="https://www.linkedin.com/in/rishwanth-reddy-adamala/"
+          target="_blank"
+          class="contact-card"
         >
 
-          <div>
-
-            <span class="contact-type">
-              PHONE
-            </span>
-
-            <strong>
-              +1 9132064806
-            </strong>
-
+          <div class="contact-icon">
+            <i class="fa-brands fa-linkedin-in"></i>
           </div>
 
-          <i class="fa-solid fa-phone"></i>
+          <div>
+            <small>LINKEDIN</small>
+            <strong>Connect Professionally</strong>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
 
         </a>
 
@@ -1352,22 +1350,19 @@
         <a
           href="https://github.com/Rishwanth05"
           target="_blank"
-          class="contact-feature"
+          class="contact-card"
         >
 
-          <div>
-
-            <span class="contact-type">
-              GITHUB
-            </span>
-
-            <strong>
-              github.com/Rishwanth05
-            </strong>
-
+          <div class="contact-icon">
+            <i class="fa-brands fa-github"></i>
           </div>
 
-          <i class="fa-brands fa-github"></i>
+          <div>
+            <small>GITHUB</small>
+            <strong>Explore My Code</strong>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
 
         </a>
 
@@ -1376,18 +1371,13 @@
 
       <div class="contact-footer">
 
-        <div class="contact-footer-brand">
-          &lt;Rishwanth/&gt;
-        </div>
+        <span>
+          © 2026 Rishwanth Reddy Adamala
+        </span>
 
-        <p>
-          Full-Stack • Cloud • DevOps
-        </p>
-
-        <a href="#home">
-          Back to top
-          <i class="fa-solid fa-arrow-up"></i>
-        </a>
+        <span>
+          Built with curiosity, purpose & code.
+        </span>
 
       </div>
 
@@ -1396,34 +1386,13 @@
   </main>
 
 
-  <!-- MOBILE NAV -->
-
-  <nav class="mobile-bottom-nav">
-
-    <a href="#home">
-      <i class="fa-solid fa-house"></i>
-      <span>Home</span>
-    </a>
-
-    <a href="#skills">
-      <i class="fa-solid fa-code"></i>
-      <span>Skills</span>
-    </a>
-
-    <a href="#projects">
-      <i class="fa-solid fa-layer-group"></i>
-      <span>Work</span>
-    </a>
-
-    <a href="#contact">
-      <i class="fa-solid fa-paper-plane"></i>
-      <span>Contact</span>
-    </a>
-
-  </nav>
-
-
   <script>
+
+    const scrollProgress =
+      document.getElementById("scrollProgress");
+
+    const topbar =
+      document.querySelector(".topbar");
 
     const mobileMenuButton =
       document.getElementById("mobileMenuButton");
@@ -1431,157 +1400,166 @@
     const mobileMenu =
       document.getElementById("mobileMenu");
 
+    const navItems =
+      document.querySelectorAll(".nav-item");
 
-    mobileMenuButton.addEventListener("click", () => {
-
-      mobileMenu.classList.toggle("open");
-
-      const open =
-        mobileMenu.classList.contains("open");
-
-      mobileMenuButton.innerHTML =
-        open
-          ? '<i class="fa-solid fa-xmark"></i>'
-          : '<i class="fa-solid fa-bars"></i>';
-
-    });
+    const sections =
+      document.querySelectorAll("main section[id]");
 
 
-    document
-      .querySelectorAll(".mobile-menu a")
-      .forEach(link => {
-
-        link.addEventListener("click", () => {
-
-          mobileMenu.classList.remove("open");
-
-          mobileMenuButton.innerHTML =
-            '<i class="fa-solid fa-bars"></i>';
-
-        });
-
-      });
-
-
-    /* SCROLL PROGRESS */
-
-    const scrollProgress =
-      document.getElementById("scrollProgress");
-
-
-    window.addEventListener("scroll", () => {
+    function updateScrollProgress() {
 
       const scrollTop =
         window.scrollY;
 
-      const docHeight =
+      const documentHeight =
         document.documentElement.scrollHeight -
         window.innerHeight;
 
-      const percentage =
-        docHeight > 0
-          ? (scrollTop / docHeight) * 100
+      const progress =
+        documentHeight > 0
+          ? (scrollTop / documentHeight) * 100
           : 0;
 
       scrollProgress.style.width =
-        `${percentage}%`;
+        `${progress}%`;
 
-    });
-
-
-    /* ACTIVE NAV */
-
-    const sections =
-      document.querySelectorAll("section[id]");
-
-    const navigationLinks =
-      document.querySelectorAll(".desktop-nav .nav-item");
+    }
 
 
-    const observer =
-      new IntersectionObserver(
+    function updateTopbar() {
 
-        entries => {
+      if (window.scrollY > 40) {
 
-          entries.forEach(entry => {
+        topbar.classList.add("topbar-scrolled");
 
-            if (!entry.isIntersecting) return;
+      } else {
 
-            navigationLinks.forEach(link => {
+        topbar.classList.remove("topbar-scrolled");
 
-              link.classList.remove("active");
+      }
 
-              if (
-                link.getAttribute("href") ===
-                `#${entry.target.id}`
-              ) {
+    }
 
-                link.classList.add("active");
 
-              }
+    function updateActiveNavigation() {
 
-            });
+      let currentSection = "";
 
-          });
+      sections.forEach(section => {
 
-        },
+        const sectionTop =
+          section.offsetTop - 180;
 
-        {
-          rootMargin:
-            "-30% 0px -60% 0px"
+        if (window.scrollY >= sectionTop) {
+
+          currentSection =
+            section.getAttribute("id");
+
         }
 
-      );
+      });
 
 
-    sections.forEach(section => {
-      observer.observe(section);
-    });
+      navItems.forEach(item => {
 
+        item.classList.remove("active");
 
-    /* REVEAL */
+        if (
+          item.getAttribute("href") ===
+          `#${currentSection}`
+        ) {
 
-    const revealElements =
-      document.querySelectorAll(
-        ".education-card, .skill-panel, .featured-project, .project-card, .mindset-paragraph, .contact-feature"
-      );
+          item.classList.add("active");
 
-
-    const revealObserver =
-      new IntersectionObserver(
-
-        entries => {
-
-          entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-              entry.target.classList.add("revealed");
-
-              revealObserver.unobserve(
-                entry.target
-              );
-
-            }
-
-          });
-
-        },
-
-        {
-          threshold: 0.12
         }
 
-      );
+      });
+
+    }
 
 
-    revealElements.forEach(element => {
+    window.addEventListener(
+      "scroll",
+      () => {
 
-      element.classList.add("reveal-item");
+        updateScrollProgress();
+        updateTopbar();
+        updateActiveNavigation();
 
-      revealObserver.observe(element);
+      }
+    );
 
-    });
+
+    mobileMenuButton.addEventListener(
+      "click",
+      () => {
+
+        mobileMenu.classList.toggle("active");
+
+        const icon =
+          mobileMenuButton.querySelector("i");
+
+        if (
+          mobileMenu.classList.contains("active")
+        ) {
+
+          icon.classList.remove(
+            "fa-bars"
+          );
+
+          icon.classList.add(
+            "fa-xmark"
+          );
+
+        } else {
+
+          icon.classList.remove(
+            "fa-xmark"
+          );
+
+          icon.classList.add(
+            "fa-bars"
+          );
+
+        }
+
+      }
+    );
+
+
+    mobileMenu
+      .querySelectorAll("a")
+      .forEach(link => {
+
+        link.addEventListener(
+          "click",
+          () => {
+
+            mobileMenu.classList.remove(
+              "active"
+            );
+
+            const icon =
+              mobileMenuButton.querySelector("i");
+
+            icon.classList.remove(
+              "fa-xmark"
+            );
+
+            icon.classList.add(
+              "fa-bars"
+            );
+
+          }
+        );
+
+      });
+
+
+    updateScrollProgress();
+    updateTopbar();
+    updateActiveNavigation();
 
   </script>
 
